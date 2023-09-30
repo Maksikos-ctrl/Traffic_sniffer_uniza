@@ -57,4 +57,4 @@ The program processes packets based on their type:
 
 ## License
 
-This project is licensed under the ANSYS License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the ANSYS License - see the [LICENSE](https://www.ansys.com/academic/students) file for details.
