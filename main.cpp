@@ -8,7 +8,6 @@
     |__|     | _| `._____/__/     \__\ |__|     |__|     |__|  \______|   |_______/    |__| \__| |__| |__|     |__|     |_______|| _| `._____|
 
 
-?Traffic Sniffer
 
 
 */
@@ -20,17 +19,17 @@
 using namespace Tins;
 
 class PacketProcessor {
-public:
-    virtual void process_packet(const PDU& pdu) const = 0;
-    virtual ~PacketProcessor() = default;
+    public:
+        virtual void process_packet(const PDU& pdu) const = 0;
+        virtual ~PacketProcessor() = default;
 };
 
 class EthernetPacketProcessor : public PacketProcessor {
-public:
-    void process_packet(const PDU& pdu) const override {
-        const EthernetII& eth = pdu.rfind_pdu<EthernetII>();
-        std::cout << "Received Ethernet II packet: " << eth.src_addr() << " -> " << eth.dst_addr() << std::endl;
-    }
+    public:
+        void process_packet(const PDU& pdu) const override {
+            const EthernetII& eth = pdu.rfind_pdu<EthernetII>();
+            std::cout << "Received Ethernet II packet: " << eth.src_addr() << " -> " << eth.dst_addr() << std::endl;
+        }
 };
 
 class TCPPacketProcessor : public PacketProcessor {
