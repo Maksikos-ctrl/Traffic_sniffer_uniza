@@ -53,7 +53,6 @@ The program processes packets based on their type:
 4. Push to the branch: `git push origin feature/new-feature`.
 5. Submit a pull request.
 
-## License
 
 ## License
 
